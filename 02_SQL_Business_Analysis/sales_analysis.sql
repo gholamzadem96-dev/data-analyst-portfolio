@@ -148,3 +148,38 @@ SELECT
 FROM customer_value
 GROUP BY customer_segment
 ORDER BY total_revenue DESC;
+-- 10. DISCOUNT PERFORMANCE ANALYSIS
+
+SELECT
+    Discount,
+    COUNT(*) AS total_orders,
+    SUM(Quantity) AS total_units,
+    ROUND(SUM(Revenue), 2) AS total_revenue,
+    ROUND(AVG(Revenue), 2) AS average_order_value,
+    ROUND(
+        SUM(Gross_Profit) * 100.0 /
+        SUM(Revenue),
+        2
+    ) AS profit_margin
+FROM sales
+GROUP BY Discount
+ORDER BY CAST(REPLACE(Discount, '%', '') AS REAL);
+
+
+-- 11. CATEGORY AND DISCOUNT ANALYSIS
+
+SELECT
+    Category,
+    Discount,
+    COUNT(*) AS total_orders,
+    ROUND(AVG(Revenue), 2) AS average_order_value,
+    ROUND(
+        SUM(Gross_Profit) * 100.0 /
+        SUM(Revenue),
+        2
+    ) AS profit_margin
+FROM sales
+GROUP BY Category, Discount
+ORDER BY
+    Category,
+    CAST(REPLACE(Discount, '%', '') AS REAL);
