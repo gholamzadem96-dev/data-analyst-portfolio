@@ -29,6 +29,19 @@ Key areas:
 
 [View Project](./01_Excel_Sales_Analysis/)
 
+### Project 02 – SQL Business Analysis
+
+**Tools:** SQL, SQLite, DB Browser for SQLite
+
+Analyzed 1,000 online store orders using SQL to evaluate business performance, product profitability, regional sales, customer behavior, discount patterns, and quarterly trends.
+
+**Key Findings:**
+- Total Revenue: $149,501.95
+- Gross Profit: $67,832.95
+- Gross Profit Margin: 45.37%
+- Identified top-performing products and customer segments using Pareto and ABC analysis.
+
+[View Project](./02_SQL_Business_Analysis/)
 ## About Me
 
 I am continuously developing my technical skills through practical projects and real-world business analysis scenarios.
