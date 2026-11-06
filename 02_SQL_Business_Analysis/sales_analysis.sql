@@ -183,3 +183,81 @@ GROUP BY Category, Discount
 ORDER BY
     Category,
     CAST(REPLACE(Discount, '%', '') AS REAL);
+-- 12. PRODUCT PARETO ANALYSIS
+
+WITH product_profit AS (
+    SELECT
+        Product,
+        SUM(Gross_Profit) AS gross_profit
+    FROM sales
+    GROUP BY Product
+),
+ranked_products AS (
+    SELECT
+        Product,
+        gross_profit,
+        SUM(gross_profit) OVER (
+            ORDER BY gross_profit DESC
+            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ) AS cumulative_profit
+    FROM product_profit
+)
+SELECT
+    Product,
+    ROUND(gross_profit, 2) AS gross_profit,
+    ROUND(cumulative_profit, 2) AS cumulative_profit,
+    ROUND(
+        cumulative_profit * 100.0 /
+        (SELECT SUM(Gross_Profit) FROM sales),
+        2
+    ) AS cumulative_profit_percentage
+FROM ranked_products
+ORDER BY gross_profit DESC;
+
+
+-- 13. PRODUCT ABC ANALYSIS
+
+WITH product_profit AS (
+    SELECT
+        Product,
+        SUM(Gross_Profit) AS gross_profit
+    FROM sales
+    GROUP BY Product
+),
+ranked_products AS (
+    SELECT
+        Product,
+        gross_profit,
+        SUM(gross_profit) OVER (
+            ORDER BY gross_profit DESC
+            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ) AS cumulative_profit
+    FROM product_profit
+),
+classified_products AS (
+    SELECT
+        Product,
+        gross_profit,
+        CASE
+            WHEN (cumulative_profit - gross_profit) * 100.0 /
+                 (SELECT SUM(Gross_Profit) FROM sales) < 80
+                THEN 'A'
+            WHEN (cumulative_profit - gross_profit) * 100.0 /
+                 (SELECT SUM(Gross_Profit) FROM sales) < 95
+                THEN 'B'
+            ELSE 'C'
+        END AS abc_category
+    FROM ranked_products
+)
+SELECT
+    abc_category,
+    COUNT(*) AS total_products,
+    ROUND(SUM(gross_profit), 2) AS gross_profit,
+    ROUND(
+        SUM(gross_profit) * 100.0 /
+        (SELECT SUM(Gross_Profit) FROM sales),
+        2
+    ) AS profit_percentage
+FROM classified_products
+GROUP BY abc_category
+ORDER BY abc_category;
