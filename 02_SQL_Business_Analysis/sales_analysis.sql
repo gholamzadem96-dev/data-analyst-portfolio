@@ -261,3 +261,41 @@ SELECT
 FROM classified_products
 GROUP BY abc_category
 ORDER BY abc_category;
+-- 14. QUARTERLY SALES PERFORMANCE
+
+SELECT
+    CASE
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 1 AND 3 THEN 'Q1'
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 4 AND 6 THEN 'Q2'
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 7 AND 9 THEN 'Q3'
+        ELSE 'Q4'
+    END AS sales_quarter,
+    COUNT(*) AS total_orders,
+    ROUND(SUM(Revenue), 2) AS total_revenue,
+    ROUND(AVG(Revenue), 2) AS average_order_value,
+    ROUND(SUM(Gross_Profit), 2) AS gross_profit,
+    ROUND(
+        SUM(Gross_Profit) * 100.0 / SUM(Revenue),
+        2
+    ) AS profit_margin
+FROM sales
+GROUP BY sales_quarter
+ORDER BY sales_quarter;
+
+
+-- 15. QUARTERLY PRODUCT PERFORMANCE
+
+SELECT
+    CASE
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 1 AND 3 THEN 'Q1'
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 4 AND 6 THEN 'Q2'
+        WHEN CAST(strftime('%m', Order_Date) AS INTEGER) BETWEEN 7 AND 9 THEN 'Q3'
+        ELSE 'Q4'
+    END AS sales_quarter,
+    Product,
+    SUM(Quantity) AS units_sold,
+    ROUND(SUM(Revenue), 2) AS total_revenue,
+    ROUND(SUM(Gross_Profit), 2) AS gross_profit
+FROM sales
+GROUP BY sales_quarter, Product
+ORDER BY sales_quarter, total_revenue DESC;
