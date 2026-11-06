@@ -60,3 +60,37 @@ SELECT
 FROM sales
 GROUP BY strftime('%Y-%m', Order_Date)
 ORDER BY sales_month;
+-- 5. PRODUCT PROFITABILITY ANALYSIS
+
+SELECT
+    Product,
+    SUM(Quantity) AS units_sold,
+    ROUND(SUM(Revenue), 2) AS total_revenue,
+    ROUND(SUM(Gross_Profit), 2) AS gross_profit,
+    ROUND(
+        SUM(Gross_Profit) * 100.0 /
+        NULLIF(SUM(Revenue), 0),
+        2
+    ) AS profit_margin
+FROM sales
+GROUP BY Product
+ORDER BY gross_profit DESC;
+
+
+-- 6. PRODUCT PROFITABILITY RANKING
+
+SELECT
+    Product,
+    ROUND(
+        SUM(Gross_Profit) * 100.0 /
+        NULLIF(SUM(Revenue), 0),
+        2
+    ) AS profit_margin,
+    RANK() OVER (
+        ORDER BY
+            SUM(Gross_Profit) * 1.0 /
+            NULLIF(SUM(Revenue), 0) DESC
+    ) AS profitability_rank
+FROM sales
+GROUP BY Product
+ORDER BY profitability_rank;
