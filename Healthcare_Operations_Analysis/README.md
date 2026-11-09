@@ -8,8 +8,7 @@ The objective is to evaluate operational performance, appointment completion, pa
 
 ## Dashboard Preview
 
-![Healthcare Operations Dashboard](./Reports/Healthcare_Dashboard_Top.png)  
-
+![Healthcare Operations Dashboard](./Reports/Reports/Healthcare_Dashboard_Preview.png)
 ## Tools & Technologies
 
 - SQLite
