@@ -6,6 +6,10 @@ This project analyzes synthetic healthcare operations data for a healthcare faci
 
 The objective is to evaluate operational performance, appointment completion, patient behavior, waiting times, consultation duration, and revenue distribution using SQL and Microsoft Excel.
 
+## Dashboard Preview
+
+![Healthcare Operations Dashboard](./Reports/Healthcare_Dashboard_Top.png)  
+
 ## Tools & Technologies
 
 - SQLite
