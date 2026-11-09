@@ -63,6 +63,18 @@ Eight data quality checks were performed. All checks passed, including:
 - Payment record validity
 - Visit timing validity
 
+## Analytical Limitations
+
+The following characteristics should be considered when interpreting the results:
+
+- The dataset is synthetic and does not represent actual healthcare operations.
+- Patient records are evenly distributed across four cities.
+- No patients under 18 years of age are included in the dataset.
+- New appointment records show the same count and completion rate as online bookings, indicating a correlation in the synthetic data generation process.
+- Differences in doctor performance metrics should not be interpreted as definitive measures of clinical quality.
+
+These limitations are documented to ensure transparent and responsible interpretation of the analysis.
+
 ## Important Note
 
 This project uses entirely synthetic data created for educational, analytical, and portfolio demonstration purposes. It does not contain real patient information or represent the actual performance of a healthcare facility.
