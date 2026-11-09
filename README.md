@@ -16,6 +16,7 @@ This repository showcases my practical projects in data analysis, business repor
 ## Projects
 
 ### 01. Online Store Sales Analysis
+
 **Tools:** Microsoft Excel
 
 An end-to-end Excel project analyzing 1,000 online store orders from 2025.
@@ -29,7 +30,7 @@ Key areas:
 
 [View Project](./01_Excel_Sales_Analysis/)
 
-### Project 02 – SQL Business Analysis
+### 02. SQL Business Analysis
 
 **Tools:** SQL, SQLite, DB Browser for SQLite
 
@@ -42,6 +43,35 @@ Analyzed 1,000 online store orders using SQL to evaluate business performance, p
 - Identified top-performing products and customer segments using Pareto and ABC analysis.
 
 [View Project](./02_SQL_Business_Analysis/)
+
+### 03. Healthcare Operations Analysis
+
+**Tools:** SQL, SQLite, DB Browser for SQLite, Microsoft Excel
+
+An end-to-end healthcare operations analysis project using synthetic data from 2025. The database contains 13,582 records across six relational tables.
+
+Key areas:
+- Department performance analysis
+- Appointment completion and cancellation analysis
+- Waiting time and consultation duration analysis
+- Monthly appointment trends
+- Booking channel and appointment type performance
+- Payment method and revenue analysis
+- Patient demographics and doctor performance
+- SQL data quality validation
+- Excel dashboard development
+
+**Key Findings:**
+- Total Appointments: 5,000
+- Completed Appointments: 4,028
+- Appointment Completion Rate: 80.56%
+- Total Patients: 500
+- Neurology recorded the highest number of completed appointments.
+
+[View Project](./Healthcare_Operations_Analysis/)
+
+*Note: This project uses synthetic data for educational and portfolio demonstration purposes.*
+
 ## About Me
 
 I am continuously developing my technical skills through practical projects and real-world business analysis scenarios.
@@ -49,4 +79,5 @@ I am continuously developing my technical skills through practical projects and 
 **Current Focus:** Excel, SQL, and Business Data Analysis.
 
 ---
-*This portfolio is a work in progress. More projects will be added soon.*
+
+*This portfolio is a work in progress. More projects will be added soon.*  
