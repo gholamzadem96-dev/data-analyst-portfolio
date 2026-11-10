@@ -77,7 +77,19 @@ Key areas:
 I am continuously developing my technical skills through practical projects and real-world business analysis scenarios.
 
 **Current Focus:** Excel, SQL, and Business Data Analysis.
+## Featured Projects
 
+### 1. Online Store Sales Analysis
+Tools: Microsoft Excel
+
+### 2. SQL Business Analysis
+Tools: SQL, SQLite
+
+### 3. Healthcare Operations Analysis
+Tools: SQL, SQLite, Microsoft Excel
+
+## Contact
+Email: gholamzadem96@gmail.com
 ---
 
 *This portfolio is a work in progress. More projects will be added soon.*  
