@@ -15,7 +15,8 @@ This repository showcases my practical projects in data analysis, business repor
 
 ## Projects
 
-### 1. [Online Store Sales Analysis](./01_Online_Store_Sales_Analysis)
+1. [Online Store Sales Analysis](./01_Excel_Sales_Analysis)
+
 
 **Tools:** Microsoft Excel
 
@@ -30,7 +31,7 @@ Key areas:
 
 [View Project](./01_Excel_Sales_Analysis/)
 
-### 2. [SQL Business Analysis](./02_SQL_Business_Analysis)
+2. [SQL Business Analysis](./02_SQL_Business_Analysis)
 
 **Tools:** SQL, SQLite, DB Browser for SQLite
 
@@ -44,7 +45,7 @@ Analyzed 1,000 online store orders using SQL to evaluate business performance, p
 
 [View Project](./02_SQL_Business_Analysis/)
 
-### 3. [Healthcare Operations Analysis](./03_Healthcare_Operations_Analysis)
+3. [Healthcare Operations Analysis](./03_Healthcare_Operations_Analysis)
 
 **Tools:** SQL, SQLite, DB Browser for SQLite, Microsoft Excel
 
