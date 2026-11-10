@@ -45,7 +45,7 @@ Analyzed 1,000 online store orders using SQL to evaluate business performance, p
 
 [View Project](./02_SQL_Business_Analysis/)
 
-3. [Healthcare Operations Analysis](./03_Healthcare_Operations_Analysis)
+3. [Healthcare Operations Analysis](https://github.com/gholamzadem96-dev/data-analyst-portfolio/tree/main/Healthcare_Operations_Analysis)
 
 **Tools:** SQL, SQLite, DB Browser for SQLite, Microsoft Excel
 
